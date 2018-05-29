@@ -16,8 +16,7 @@ $(document).ready(function() {
   you need an instance of "firebase.database" */
   var database = firebase.database(); 
 
-  
-  // listener to click button to add a new train
+  // listener to click button to add a new train to the database
   $("#submitButton").on('click', function(event) { 
     event.preventDefault();
     // create variables to hold schedule information: train name, destionation, departure/arrival time and frequency of travel
@@ -40,13 +39,14 @@ $(document).ready(function() {
     console.log(newTrainDest);
     console.log(newTrainTime);
     console.log(newTrainFreq);
-  
+
+    $('#trainForm')[0].reset(); // clean the form
   });
 
   // get a snapshot of the stored data.
   // This function allows you to update your page in real-time when the firebase database changes.
 
-  database.ref.on("child_added", function(snapshot) {
+  database.ref().on("child_added", function(snapshot) {
     console.log(snapshot.val());
 
     // Store everything into a variable
