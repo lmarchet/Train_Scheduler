@@ -61,8 +61,7 @@ $(document).ready(function() {
     console.log(currentTrainFreq);
 
     // Add each train's data into the table
-    $("#trainInfo > tbody").append("<tr><td>" + currentTrainName + "</td><td>" +currentTrainDest + "</td><td>" +  "</td></tr>");
-
+    $("#trainInfo > tbody").append("<tr><td>" + currentTrainName + "</td><td>" + currentTrainDest + "</td><td>" + currentTrainTime + "</td><td>" + currentTrainFreq + "</td></tr>");
   });
 
 
